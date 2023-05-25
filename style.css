@@ -21,11 +21,11 @@ body {
     width: 672px;
     height: 672px;
     flex-shrink: 0;
-    border: 1px solid #a8dadc;
+    border: 1px solid #d9d9d9;
 }
 .cell {
-    background-color: #f1faee;
+    background-color: #f0f0f0;
     width: 40px;
     height: 40px;
-    border: 1px solid #a8dadc
+    border: 1px solid #d9d9d9
 }
