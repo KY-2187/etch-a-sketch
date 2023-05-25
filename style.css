@@ -81,11 +81,3 @@ button:hover {
     background-color: #a8dadc;
     color: #e63946;
 }
-
-button:after {
-    background-color: #1d3557;
-}
-
-button:active:after {
-    transition: 0s;
-}
