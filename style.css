@@ -1,0 +1,31 @@
+body {
+    background-color: #1d3557;
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+    display: flex;
+    width: 750px;
+    height: 750px;
+    flex-shrink: 0;
+    background-color: #e63946;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 672px;
+    height: 672px;
+    flex-shrink: 0;
+    border: 1px solid #a8dadc;
+}
+.cell {
+    background-color: #f1faee;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #a8dadc
+}
