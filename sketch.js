@@ -2,6 +2,10 @@ const grid = document.querySelector('#grid');
 
 let isMouseDown = false;
 
+document.addEventListener("mouseup", function() {
+    isMouseDown = false;
+});
+
 for (let i = 0; i < 16; i++) {
     for (let j = 0; j < 16; j++) {
         let cell = document.createElement('div');
