@@ -10,7 +10,7 @@ body {
     height: 750px;
     flex-shrink: 0;
     background-color: #e63946;
-    border-radius: 5px;
+    border-radius: 30px;
     justify-content: center;
     align-items: center;
 }
