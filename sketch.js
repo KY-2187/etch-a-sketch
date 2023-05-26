@@ -2,6 +2,9 @@ const grid = document.querySelector('#grid');
 const buttons = document.querySelectorAll('button');
 
 let isMouseDown = false;
+let color = 'default';
+let gridSize = 32;
+let cellSize = '19px';
 
 function createGrid(gridSize, cellSize) {
     document.addEventListener("mouseup", function() {
@@ -19,12 +22,24 @@ function createGrid(gridSize, cellSize) {
             cell.addEventListener('mousedown', function(e) { 
                 e.preventDefault();
                 isMouseDown = true;
-                cell.style.backgroundColor = '#353535'; 
+                if (color === 'default') {
+                    cell.style.backgroundColor = '#353535'; 
+                } else if (color === 'rainbow') {
+                    cell.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                } else if (color === 'eraser') {
+                    cell.style.backgroundColor = '#f0f0f0';
+                }
             });
     
             cell.addEventListener('mousemove', function() {
                 if (isMouseDown) {
-                    cell.style.backgroundColor = '#353535';
+                    if (color === 'default') {
+                        cell.style.backgroundColor = '#353535';
+                    } else if (color === 'rainbow') {
+                        cell.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                    } else if (color === 'eraser') {
+                        cell.style.backgroundColor = '#f0f0f0';
+                    }
                 }
             });
         
@@ -42,19 +57,30 @@ function deleteCells() {
     })
 }
 
-createGrid(16, '40px');
+createGrid(gridSize, cellSize);
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (button.id == 'small') {
             deleteCells();
-            createGrid(16, '40px');
+            gridSize = 16;
+            cellSize = '40px';
+            createGrid(gridSize, cellSize);
         } else if (button.id === 'medium') {
             deleteCells();
-            createGrid(32, '19px');
+            gridSize = 32;
+            cellSize = '19px';
+            createGrid(gridSize, cellSize);
         } else if (button.id === 'large') {
             deleteCells();
-            createGrid(64, '8.5px');
+            gridSize = 64;
+            cellSize = '8.5px';
+            createGrid(gridSize, cellSize);
+        } else if (button.id === 'default' || button.id === 'rainbow' || button.id === 'eraser') {
+            color = button.id;
+        } else if (button.id == 'clear') {
+            deleteCells();
+            createGrid(gridSize, cellSize);
         }
     })
 })

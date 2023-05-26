@@ -22,8 +22,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family: 'Signika', sans-serif;
-    gap: 10px;
+    gap: 50px;
 }
 
 .border {
@@ -58,11 +59,11 @@ body {
     text-align: center;
 }
 
-.size-buttons {
+.buttons {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
 }
 
 button {
@@ -78,6 +79,15 @@ button {
 }
 
 button:hover {
+    background-color: #a8dadc;
+    color: #e63946;
+}
+
+#clear {
+    background-color: #b5323d;
+}
+
+#clear:hover {
     background-color: #a8dadc;
     color: #e63946;
 }
